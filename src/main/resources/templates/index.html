@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container">
+    <h1>Events List</h1>
+    <table border="1" class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Event Description</th>
+            </tr>
+        </thead>
+        <tr th:each="event : ${listEvents}">
+            <td th:text="${event.eventName}"></td>
+            <td th:text="${event.eventDescription}"></td>
+            </tr>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
