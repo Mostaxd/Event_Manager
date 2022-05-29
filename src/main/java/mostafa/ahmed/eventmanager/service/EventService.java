@@ -1,0 +1,9 @@
+package mostafa.ahmed.eventmanager.service;
+
+import mostafa.ahmed.eventmanager.model.Event;
+
+import java.util.List;
+
+public interface EventService {
+    List<Event> getAllEvents();
+}
