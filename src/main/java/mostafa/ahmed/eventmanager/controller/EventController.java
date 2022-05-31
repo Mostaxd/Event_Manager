@@ -43,6 +43,11 @@ public class EventController {
         model.addAttribute("event",event);
         return "update_event";
     }
+    @GetMapping("/deleteEvent/{id}")
+    public String deleteEvent(@PathVariable (value = "id") long id){
+        eventService.deleteEventById(id);
+        return "redirect:/";
+    }
 
 
 

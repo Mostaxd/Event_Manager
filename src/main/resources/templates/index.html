@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<div align="center" class="container">
+<body class="p-3 mb-2 bg-dark text-white">
+<div  class="container" >
     <h1>Events List</h1>
-    <a th:href = "@{/showNewEventForm}" class="btn btn-primary"> Add Event </a>
+    <a th:href = "@{/showNewEventForm}" class="btn btn-info"> Add Event </a>
     <table border="1" class="table table-striped table-dark">
         <thead>
         <tr>
@@ -21,7 +21,9 @@
         <tr th:each="event : ${listEvents}">
             <td th:text="${event.eventName}"></td>
             <td th:text="${event.eventDescription}"></td>
-            <td> <a th:href="@{/showUpdateEventForm/{id}(id=${event.id})}" class="btn btn-secondary">Update</a></td>
+            <td> <a th:href="@{/showUpdateEventForm/{id}(id=${event.id})}" class="btn btn-secondary">Update</a>
+                <a th:href="@{/deleteEvent/{id}(id=${event.id})}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         <tbody>
         </tbody>
