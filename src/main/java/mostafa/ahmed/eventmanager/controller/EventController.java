@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,5 +35,15 @@ public class EventController {
         eventService.saveEvent(event);
         return "redirect:/";
     }
+
+
+    @GetMapping("/showUpdateEventForm/{id}")
+    public String showUpdateEventForm(@PathVariable (value = "id") long id, Model model){
+        Event event = eventService.getEventById(id);
+        model.addAttribute("event",event);
+        return "update_event";
+    }
+
+
 
 }

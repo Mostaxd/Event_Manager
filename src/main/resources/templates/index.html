@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Event Management System</title>
@@ -15,11 +15,13 @@
         <tr>
             <th>Event Name</th>
             <th>Event Description</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tr th:each="event : ${listEvents}">
             <td th:text="${event.eventName}"></td>
             <td th:text="${event.eventDescription}"></td>
+            <td> <a th:href="@{/showUpdateEventForm/{id}(id=${event.id})}" class="btn btn-secondary">Update</a></td>
         </tr>
         <tbody>
         </tbody>
